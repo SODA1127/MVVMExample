@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="user"
+            type="com.example.leekijung.mvvmexample.model.User"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/idInput"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="@{user.id}"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/pwInput"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/idInput"
+            android:text="@{user.pw}"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/idInput"
+            android:text="로그인"
+            android:onClick="onButtonClick"/>
+
+        <TextView
+            android:id="@+id/idTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_above="@+id/pwTv"
+            android:layout_marginTop="16dp"
+            android:text="@{user.id}"/>
+
+        <TextView
+            android:id="@+id/pwTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:text="@{user.pw}"/>
+    </RelativeLayout>
+</layout>
